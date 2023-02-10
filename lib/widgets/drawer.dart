@@ -1,0 +1,65 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+class MyDrawer extends StatelessWidget {
+  const MyDrawer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final imageUrl =
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png";
+    return Drawer(
+      child: Container(
+        color: Colors.deepPurple,
+        child: ListView(
+          children: [
+            DrawerHeader(
+              padding: EdgeInsets.zero,
+              child: UserAccountsDrawerHeader(
+                accountName: Text("Sonal Dubey"),
+                accountEmail: Text("1234@gmail.com"),
+                currentAccountPicture: CircleAvatar(
+                  backgroundImage: NetworkImage(imageUrl),
+                  backgroundColor: Colors.white,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(
+                CupertinoIcons.home,
+                color: Colors.white,
+              ),
+              title: Text(
+                "Home",
+                textScaleFactor: 1.2,
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+            ListTile(
+              leading: Icon(
+                CupertinoIcons.profile_circled,
+                color: Colors.white,
+              ),
+              title: Text(
+                "Profile",
+                textScaleFactor: 1.2,
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+            ListTile(
+              leading: Icon(
+                CupertinoIcons.mail,
+                color: Colors.white,
+              ),
+              title: Text(
+                "Email me",
+                textScaleFactor: 1.2,
+                style: TextStyle(color: Colors.white),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
